@@ -1,17 +1,18 @@
 import styles from './Header.module.css'
 
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
     <div className={styles.header}>
       <div className="header-left-section">
-        <p className="logo">WalComp</p>
+        <Link to="/homepage" className={styles.logo}>WalComp</Link>
       </div>
-      <div className="header-right-section">
+    <div className={styles.headerRightSection}>
         <div className="cart">
-          <p>Cart: 2 Items</p>
-          <button>Checkout</button>
+          <Link to="/cart" >Cart: 2 Items</Link>
+          <button className={styles.buttonHeader}>Checkout</button>
         </div>
-
       </div>
     </div>
   );

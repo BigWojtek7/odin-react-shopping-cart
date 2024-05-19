@@ -1,7 +1,10 @@
-import Header from "../Header"
 
 function HomePage(){
   return (
-    <Header />
+    <div>
+      <p>This is my home page</p>
+    </div>
   )
 }
+
+export default HomePage
