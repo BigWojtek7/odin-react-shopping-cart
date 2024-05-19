@@ -1,26 +1,19 @@
 import Card from '../ProductCard/ProductCard'
 import styles from './Homepage.module.css'
-import { useEffect } from 'react'
-import { useState } from 'react'
 
-import fetchProducts from '../FetchProducts/fetchProducts'
+import { useOutletContext } from 'react-router-dom'
+
 
 function HomePage(){
-  const [products, setProducts] = useState([])
-  useEffect(() => {
-    fetchProducts().then((result) =>{
-      setProducts(result)
-    })
-    return () => {
-      setProducts([])
-    }
-  },[])
+
+  const products = useOutletContext();
+  console.log(products)
   return (
     <div >
       <p>This is my home page</p>
       <div className={styles.products}>
         {products.map(product => (
-          <Card key={product.id} title={product.title} description={product.description}/>
+          <Card key={product.id} title={product.title} description={product.description} image={product.image}/>
         ))}
       </div>
     </div>
