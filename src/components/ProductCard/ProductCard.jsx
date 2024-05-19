@@ -1,14 +1,10 @@
 import styles from './ProductCard.module.css'
 
-function ProductCard() {
+function ProductCard(props) {
   return (
     <div className={styles.card}>
-      <p>Product Title</p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid vel,
-        magnam harum accusantium nostrum velit aperiam reiciendis ipsum officiis
-        quo
-      </p>
+      <p>{props.title}</p>
+      <p>{props.description}</p>
     </div>
   );
 }
