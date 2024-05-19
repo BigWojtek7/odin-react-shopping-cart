@@ -8,7 +8,8 @@
   font-size: 3rem;
   text-decoration: none;
   color: inherit;
-  color: rgb(0, 126, 217)
+  color: rgb(0, 126, 217);
+  letter-spacing: .2em;
 }
 
 .buttonHeader {
