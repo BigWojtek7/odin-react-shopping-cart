@@ -1,15 +1,22 @@
-import styles from './CartPage.module.css'
+import styles from "./CartPage.module.css";
+
+import { useOutletContext } from "react-router-dom";
 
 function CartPage() {
+  const [, , cart] = useOutletContext();
+  const totalPrice = cart.reduce((total, currentItem) => {
+    return total + (currentItem.price * currentItem.quantity)
+  }, 0)
+
   return (
     <div>
       <p>This is Cart page</p>
-      <ProductTable />
+      <ProductTable cart={cart} totalPrice={totalPrice} />
     </div>
-  )
+  );
 }
 
-function ProductTable() {
+function ProductTable(props) {
   return (
     <table className={styles.productTable}>
       <thead>
@@ -20,16 +27,22 @@ function ProductTable() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Laptop</td>
-          <td>1</td>
-          <td>150</td>
-        </tr>
+        {props.cart.map((product) => (
+          <tr key={product.id}>
+            <td>{product.title}</td>
+            <td>{product.quantity}</td>
+            <td>{product.price}</td>
+          </tr>
+        ))}
       </tbody>
+      <tfoot>
+          <tr>
+            <td colSpan={2}>TOTAL</td>
+            <td>{props.totalPrice}</td>
+          </tr>
+      </tfoot>
     </table>
-  )
-
+  );
 }
 
-
-export default CartPage
+export default CartPage;

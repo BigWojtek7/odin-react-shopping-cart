@@ -21,11 +21,15 @@ function App() {
     };
   }, []);
 
+  const itemsInCart = cart.reduce((total, currentItem) => {
+    return total + currentItem.quantity
+  }, 0)
+
   return (
     <div className="main-div">
-      <Header />
+      <Header cartItems={itemsInCart}/>
       <div>
-        <Outlet context={products} />
+        <Outlet context={[products, setCart, cart]} />
       </div>
     </div>
   );

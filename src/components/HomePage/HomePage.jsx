@@ -4,16 +4,60 @@ import styles from "./Homepage.module.css";
 import { useOutletContext } from "react-router-dom";
 
 function HomePage() {
-  const products = useOutletContext();
+  const [products, setCart, cart] = useOutletContext();
 
   function handleClickAdd(e) {
-    console.log(e.target.dataset.value);
     const currentValue = +e.target.dataset.value;
-    const targetProduct = products.filter((product) => {
-      return product.id === currentValue;
-    });
-    console.log(targetProduct);
+
+    const productInCart = cart.find((product) => product.id === currentValue);
+    // console.log(productInCart);
+
+    if (productInCart) {
+      setCart(
+        cart.map((product) =>
+          product.id === currentValue
+            ? { ...productInCart, quantity: productInCart.quantity + 1 }
+            : product
+        )
+      );
+    } else {
+      let targetProduct = products.filter((product) => {
+        return product.id === currentValue;
+      });
+      targetProduct = { ...targetProduct[0], quantity: 1 };
+      console.log("wojtas", targetProduct)
+      setCart([...cart, targetProduct]);
+    }
+    console.log(cart)
   }
+
+  // console.log(cart)
+  // let targetProduct = products.filter((product) => {
+  //   return product.id === currentValue;
+  // });
+  // targetProduct = { ...targetProduct[0], quantity: 1 };
+  // if (cart.length === 0){
+
+  //   setCart((cart) => [...cart, targetProduct]);
+  // }
+
+  // cart.map((product) => {
+  //   console.log("wolter");
+  //   if (product.id === currentValue) {
+  //     targetProduct["quantity"] = targetProduct['quantity'] +1
+  //     console.log("wolter2", targetProduct )
+  //     // {
+  //     //   ...targetProduct[0],
+  //     //   quantity: targetProduct.quantity + 1,
+  //     // };
+  //     setCart((cart) => [...cart, targetProduct]);
+  //   } else {
+  //     targetProduct = { ...targetProduct[0], quantity: 1 };
+  //     setCart((cart) => [...cart, targetProduct]);
+  //   }
+  // });
+
+  // console.log(cart);
 
   return (
     <div>

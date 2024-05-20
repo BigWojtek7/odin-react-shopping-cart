@@ -2,7 +2,7 @@ import styles from './Header.module.css'
 
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
   return (
     <div className={styles.header}>
       <div className="header-left-section">
@@ -10,7 +10,7 @@ function Header() {
       </div>
     <div className={styles.headerRightSection}>
         <div className="cart">
-          <Link to="/cart" >Cart: 2 Items</Link>
+          <Link to="/cart" >Cart: {props.cartItems} Items</Link>
           <button className={styles.buttonHeader}>Checkout</button>
         </div>
       </div>
