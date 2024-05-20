@@ -8,24 +8,26 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [products, setProducts] = useState([])
+  const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState([]);
+
+
   useEffect(() => {
-    fetchProducts().then((result) =>{
-      setProducts(result)
-    })
+    fetchProducts().then((result) => {
+      setProducts(result);
+    });
     return () => {
-      setProducts([])
-    }
-  },[])
+      setProducts([]);
+    };
+  }, []);
 
   return (
     <div className="main-div">
       <Header />
       <div>
-      <Outlet context={products}/>
+        <Outlet context={products} />
       </div>
     </div>
-
   );
 }
 

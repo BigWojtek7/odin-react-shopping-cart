@@ -6,7 +6,7 @@ function ProductCard(props) {
       <div><img className={styles.cardImage} src={props.image} alt="Image of product" /></div>
       <p className={styles.cardTitle}>{props.title}</p>
       <p>{props.description}</p>
-      <button className={styles.cardButton}>Add to Cart</button>
+      <button className={styles.cardButton} onClick={props.handleClickAdd} data-value={props.data}>Add to Cart</button>
     </div>
   );
 }
