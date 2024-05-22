@@ -20,7 +20,7 @@ function Header(props) {
       <div className={styles.headerRightSection}>
         <div className={styles.cart}>
           <Link to="/cart" className={styles.countItems}>
-            <img src={cartIcon} alt="cart icon" /> {props.cartItems} Items
+            <img className={styles.cartLogo} src={cartIcon} alt="cart icon" /> {props.cartItems} Items
           </Link>
           <Link to="/checkout" state={{ count: props.cartItems }}>
             <button className={styles.buttonHeader} onClick={handleCheckout}>

@@ -12,6 +12,10 @@
   letter-spacing: 0.2em;
 }
 
+.cartLogo {
+  width: 2em;
+}
+
 .cart {
   display: flex;
   justify-content: center;

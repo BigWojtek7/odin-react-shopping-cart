@@ -86,7 +86,7 @@ function ProductTable(props) {
                   // defaultValue={product.quantity}
                 />
               </td>
-              <td>{product.price}</td>
+              <td>{product.price.toFixed(2)}</td>
               <td>
                 <button
                   type="button"
