@@ -78,6 +78,7 @@ function ProductTable(props) {
               <td>{product.title}</td>
               <td>
                 <input
+                className={styles.quantityInput}
                   type="number"
                   name={product.id}
                   value={props.inputs[product.id] || ""}

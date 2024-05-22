@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="main-div">
-      <Header cartItems={itemsInCart} />
+      <Header cartItems={itemsInCart} changeCart={setCart} />
       <div>
         <Outlet context={[products, setCart, cart]} />
       </div>
