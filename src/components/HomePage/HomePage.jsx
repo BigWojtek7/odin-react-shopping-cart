@@ -10,7 +10,6 @@ function HomePage() {
     const currentValue = +e.target.dataset.value;
 
     const productInCart = cart.find((product) => product.id === currentValue);
-    // console.log(productInCart);
 
     if (productInCart) {
       setCart(
@@ -25,39 +24,9 @@ function HomePage() {
         return product.id === currentValue;
       });
       targetProduct = { ...targetProduct[0], quantity: 1 };
-      console.log("wojtas", targetProduct)
       setCart([...cart, targetProduct]);
     }
-    console.log(cart)
   }
-
-  // console.log(cart)
-  // let targetProduct = products.filter((product) => {
-  //   return product.id === currentValue;
-  // });
-  // targetProduct = { ...targetProduct[0], quantity: 1 };
-  // if (cart.length === 0){
-
-  //   setCart((cart) => [...cart, targetProduct]);
-  // }
-
-  // cart.map((product) => {
-  //   console.log("wolter");
-  //   if (product.id === currentValue) {
-  //     targetProduct["quantity"] = targetProduct['quantity'] +1
-  //     console.log("wolter2", targetProduct )
-  //     // {
-  //     //   ...targetProduct[0],
-  //     //   quantity: targetProduct.quantity + 1,
-  //     // };
-  //     setCart((cart) => [...cart, targetProduct]);
-  //   } else {
-  //     targetProduct = { ...targetProduct[0], quantity: 1 };
-  //     setCart((cart) => [...cart, targetProduct]);
-  //   }
-  // });
-
-  // console.log(cart);
 
   return (
     <div>

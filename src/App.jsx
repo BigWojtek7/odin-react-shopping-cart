@@ -11,7 +11,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const [products, setProducts] = useState([]);
 
-
   useEffect(() => {
     fetchProducts().then((result) => {
       setProducts(result);
@@ -22,12 +21,12 @@ function App() {
   }, []);
 
   const itemsInCart = cart.reduce((total, currentItem) => {
-    return total + currentItem.quantity
-  }, 0)
+    return total + +currentItem.quantity;
+  }, 0);
 
   return (
     <div className="main-div">
-      <Header cartItems={itemsInCart}/>
+      <Header cartItems={itemsInCart} />
       <div>
         <Outlet context={[products, setCart, cart]} />
       </div>
