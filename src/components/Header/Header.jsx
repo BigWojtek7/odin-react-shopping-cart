@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 
-import cartIcon from "/cart.svg";
+import cartIcon from "/src/assets/cart.svg";
 
 import { Link } from "react-router-dom";
 
