@@ -8,27 +8,12 @@ const routes = [
     path: "/",
     element: <App />,
     children: [
-      {index: true, element: <HomePage />},
+      { index: true, element: <HomePage /> },
       { path: "homepage", element: <HomePage /> },
       { path: "cart", element: <CartPage /> },
-      { path: "checkout", element: <Checkout />}
+      { path: "checkout", element: <Checkout /> },
     ],
   },
-]
-
-// const routes = [
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "homepage",
-//     element: <HomePage />
-//   },
-//   {
-//     path: "cart",
-//     element: <CartPage />
-//   }
-// ];
+];
 
 export default routes;

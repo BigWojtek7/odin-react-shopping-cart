@@ -10,12 +10,12 @@ describe("something truthy and falsy", () => {
   });
 });
 
-import { render, screen } from '@testing-library/react';
+import { render, screen } from "@testing-library/react";
 
-import App from './App';
+import App from "./App";
 
-describe('App', () => {
-  it('renders headline', () => {
+describe("App", () => {
+  it("renders headline", () => {
     render(<App title="React" />);
 
     screen.debug();

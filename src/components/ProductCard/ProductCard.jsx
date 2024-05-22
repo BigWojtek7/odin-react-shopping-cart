@@ -1,12 +1,24 @@
-import styles from './ProductCard.module.css'
+import styles from "./ProductCard.module.css";
 
 function ProductCard(props) {
   return (
     <div className={styles.card}>
-      <div><img className={styles.cardImage} src={props.image} alt="Image of product" /></div>
+      <div>
+        <img
+          className={styles.cardImage}
+          src={props.image}
+          alt="Image of product"
+        />
+      </div>
       <p className={styles.cardTitle}>{props.title}</p>
       <p>{props.description}</p>
-      <button className={styles.cardButton} onClick={props.handleClickAdd} data-value={props.data}>Add to Cart</button>
+      <button
+        className={styles.cardButton}
+        onClick={props.handleClickAdd}
+        data-value={props.data}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }

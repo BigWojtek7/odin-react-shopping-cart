@@ -43,7 +43,7 @@ function CartPage() {
     );
   }
   const totalPrice = cart.reduce((total, currentItem) => {
-    return total + currentItem.price * currentItem.quantity;
+    return Math.round((total + currentItem.price * currentItem.quantity)*100)/100;
   }, 0);
   return (
     <div>
