@@ -5,14 +5,14 @@
 }
 
 body {
-  margin: 8%;
+  margin: 3vw 5vw;
   background-color: #f5f5dc;
   font-family: sans-serif, Arial, Helvetica;
 }
 
 .main-div {
   display: grid;
-  gap: 5em;
+  gap: 40px;
 }
 
 Button {

@@ -42,12 +42,12 @@ function CartPage() {
       })
     );
   }
-  const totalPrice = cart.reduce((total, currentItem) => {
+  let totalPrice = cart.reduce((total, currentItem) => {
     return Math.round((total + currentItem.price * currentItem.quantity)*100)/100;
   }, 0);
   return (
     <div>
-      <p>Your added products:</p>
+      <h2>Your added products:</h2>
       <ProductTable
         cart={cart}
         handleDelete={handleDelete}
@@ -102,7 +102,7 @@ function ProductTable(props) {
         <tfoot>
           <tr>
             <td colSpan={2}>TOTAL</td>
-            <td colSpan={2}>{props.totalPrice}</td>
+            <td colSpan={2}>{props.totalPrice.toFixed(2)}</td>
           </tr>
         </tfoot>
       </table>
