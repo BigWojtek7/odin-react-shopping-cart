@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function Header(props) {
   function handleCheckout() {
+    if (props.cartItems === 0) return
     props.changeCart([]);
   }
 
@@ -21,7 +22,7 @@ function Header(props) {
           <Link to="/cart" className={styles.countItems}>
             <img src={cartIcon} alt="cart icon" /> {props.cartItems} Items
           </Link>
-          <Link to="/checkout">
+          <Link to="/checkout" state={{ count: props.cartItems }}>
             <button className={styles.buttonHeader} onClick={handleCheckout}>
               Checkout
             </button>

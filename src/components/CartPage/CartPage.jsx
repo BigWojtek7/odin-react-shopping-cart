@@ -47,7 +47,7 @@ function CartPage() {
   }, 0);
   return (
     <div>
-      <p>This is Cart page</p>
+      <p>Your added products:</p>
       <ProductTable
         cart={cart}
         handleDelete={handleDelete}

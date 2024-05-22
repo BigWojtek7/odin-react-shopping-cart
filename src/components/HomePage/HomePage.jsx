@@ -30,7 +30,7 @@ function HomePage() {
 
   return (
     <div>
-      <p>This is my home page</p>
+      <p>Welcome to our store!</p>
       <div className={styles.products}>
         {products.map((product) => (
           <Card
