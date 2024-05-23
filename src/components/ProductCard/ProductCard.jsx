@@ -1,4 +1,5 @@
 import styles from "./ProductCard.module.css";
+import PropTypes from "prop-types";
 
 function ProductCard(props) {
   return (
@@ -22,5 +23,13 @@ function ProductCard(props) {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  handleClickAdd: PropTypes.func,
+  data: PropTypes.number,
+};
 
 export default ProductCard;

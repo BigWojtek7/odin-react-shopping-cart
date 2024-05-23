@@ -2,6 +2,8 @@ import styles from "./CartPage.module.css";
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
+import PropTypes from "prop-types";
+
 function CartPage() {
   const [, setCart, cart] = useOutletContext();
 
@@ -43,7 +45,9 @@ function CartPage() {
     );
   }
   let totalPrice = cart.reduce((total, currentItem) => {
-    return Math.round((total + currentItem.price * currentItem.quantity)*100)/100;
+    return (
+      Math.round((total + currentItem.price * currentItem.quantity) * 100) / 100
+    );
   }, 0);
   return (
     <div>
@@ -78,12 +82,11 @@ function ProductTable(props) {
               <td>{product.title}</td>
               <td>
                 <input
-                className={styles.quantityInput}
+                  className={styles.quantityInput}
                   type="number"
                   name={product.id}
                   value={props.inputs[product.id] || ""}
                   onChange={props.inputHandler}
-                  // defaultValue={product.quantity}
                 />
               </td>
               <td>{product.price.toFixed(2)}</td>
@@ -110,5 +113,13 @@ function ProductTable(props) {
     </form>
   );
 }
+
+ProductTable.propTypes = {
+  cart: PropTypes.array,
+  handleDelete: PropTypes.func,
+  inputHandler: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  totalPrice: PropTypes.number,
+};
 
 export default CartPage;
