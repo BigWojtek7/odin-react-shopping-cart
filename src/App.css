@@ -15,11 +15,14 @@ body {
   gap: 40px;
 }
 
-Button {
+button {
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
   border: none;
   color: white;
-  background-color: rgb(80, 80, 211);
+  background-color: #5050d3;
+}
+button:hover{
+  background-color: #1b1b8c;
 }
