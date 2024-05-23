@@ -11,8 +11,8 @@ function ProductCard(props) {
           alt="Image of product"
         />
       </div>
-      <p className={styles.cardTitle}>{props.title}</p>
-      <p>{props.description}</p>
+      <p className={styles.cardTitle} data-testid="cardTitle">{props.title}</p>
+      <p data-testid="cardDescription">{props.description}</p>
       <button
         className={styles.cardButton}
         onClick={props.handleClickAdd}

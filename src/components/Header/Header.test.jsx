@@ -20,19 +20,21 @@ describe("Header component", () => {
     const button = screen.getByRole("button", { name: "Checkout" });
     expect(button).toBeInTheDocument();
   });
-  
+
   it("should call the onClick function when clicked", async () => {
-    const someFunction = vi.fn();
+    const onClick = vi.fn(() => 0);
     const user = userEvent.setup()
+
+
     render(
     <BrowserRouter>
-      <Header changeCart={someFunction}/>;
+      <Header changeCart={onClick}/>;
     </BrowserRouter>
     )
     const button = screen.getByRole("button", { name: "Checkout" });
 
     await user.click(button);
 
-    expect(someFunction).toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalled();
 });
 });
