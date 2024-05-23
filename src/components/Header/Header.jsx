@@ -35,6 +35,7 @@ function Header(props) {
 }
 Header.propTypes = {
   cartItems: PropTypes.number,
+  changeCart: PropTypes.func,
 };
 
 export default Header;
